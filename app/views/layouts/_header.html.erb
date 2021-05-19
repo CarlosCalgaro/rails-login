@@ -1,0 +1,14 @@
+<header>
+    <nav class="site-header sticky-top py-1">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        
+        <% if !@current_user %>
+          <a class="py-2 d-none d-md-inline-block" href="/sessions/new">Login</a>
+        <% else %>
+          <%= form_tag sessions_destroy_path, method: :delete do %>
+            <%= submit_tag "Sign Out", class: "py-2 d-none d-md-inline-block" %>
+          <% end %>
+        <% end %>
+      </div>
+    </nav>
+</header>
