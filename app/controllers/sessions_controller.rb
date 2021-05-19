@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else      
       flash[:alert] = authentication.message
-      render :new
+      render :new, status: :forbidden
     end
   end
 
