@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_18_233200) do
+ActiveRecord::Schema.define(version: 2021_05_19_094204) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_233200) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "login_attempts", default: 0
+    t.boolean "locked", default: false
   end
 
 end
