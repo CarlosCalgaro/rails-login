@@ -7,15 +7,16 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(username: params[:username])
-    if user && user.authenticate(params[:password])
+
+    if user && !user.locked && user.authenticate(params[:password])
       session[:current_user_id] = user.id
       flash[:notice] = "You have logged in sussessfully"
       redirect_to root_url
-    elsif user.nil?
-      flash.now[:alert] = "User not found!"
+    elsif user.locked?
+      flash.now[:alert] = "Account locked. Contact your administrator!"
       render :new
-    else 
-      user.update(login_attempts: user.login_attempts + 1)
+    else
+      Authentication::FailedLoginService::perform(user) unless user.nil?
       flash.now[:alert] = "Invalid username or password!"
       render :new
     end
