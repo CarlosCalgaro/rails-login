@@ -31,3 +31,19 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    models:
+      user: User
+    attributes:
+      user:
+        login: "Handle"
+  errors:
+    models:
+      user:
+        attributes:
+          locked: "Your account is locked. Contact your system administrator"
+  alerts:
+    already_logged_in: Already logged in!
+    successfull_login: You have logged in sussessfully
+    failed_login: Whoops, something went wrong
+    invalid_user: User doesn't exist

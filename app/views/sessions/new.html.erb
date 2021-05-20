@@ -1,0 +1,40 @@
+<%= form_tag '/sessions/create' do %>
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+    <div class="col-md-6 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal">Sign in</h1>
+        <div class="row mb-4 justify-content-md-center">
+            <div class="col-md-2">
+                Username:
+            </div>
+
+            <div class="col-md-6">
+                <%= text_field_tag :username %>
+            </div>
+        </div>
+        <div class="row mb-4 row justify-content-md-center">
+            <div class="col-md-2">
+                Password:
+            </div>
+            <div class="col-md-6 text-center    ">
+                <%= password_field_tag :password, class: "col-md-6"%>
+            </div>
+        </div>
+        <div class="row row justify-content-md-center">
+
+            <%= submit_tag "Sign In", class: "btn btn-outline-info col-md-2" %>
+        
+        </div>
+      </div>
+
+</div>
+
+<div class="jumbotron text-center align-middle h-100 w-100 p-3">
+    <div class="container vertical-centedr">
+       
+    </div>
+</div>
+
+   
+</div>
+<% end %>
