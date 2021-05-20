@@ -1,24 +1,57 @@
-# README
+# Ruby Login
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Implementation of a simple login system using the Ruby on Rails framework.
 
-Things you may want to cover:
+## Dependencies
+This project was made using Ruby version 2.7.2p137 and Rails.
 
-* Ruby version
+## Installation
 
-* System dependencies
+Run bundler to install rails/ruby dependencies
 
-* Configuration
+```bash
+bundle install
+```
 
-* Database creation
+Run yarn to install javascript dependencies
 
-* Database initialization
+```bash
+yarn
+```
 
-* How to run the test suite
+Create the database and run the migrations
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+rails db:create
+rails db:migrate
+```
+## Usage
 
-* Deployment instructions
+Run rails console
 
-* ...
+```Bash
+rails console
+
+```
+Create a new user using the console
+
+```Ruby
+User.create(username: "ExampleUsername",
+            password:"<YourPassword>", 
+            password_confirmation: "<YourPassword>)
+
+```
+
+Run the server 
+```Bash
+rails server
+
+```
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
