@@ -13,11 +13,7 @@ class User < ApplicationRecord
   def authenticate(password)
     BCrypt::Password.new(password_digest).is_password?(password)
   end
-
-  def unlock!
-    update(login_attempts: 0, locked: false)
-  end
-
+  
   private
 
   def set_password_digest
